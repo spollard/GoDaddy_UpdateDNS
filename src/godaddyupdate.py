@@ -39,3 +39,23 @@ domains = GetJson('config.json')['domains']
 # Get the current public IP Address
 public_ip = pif.get_public_ip()
 logging.debug('Retrieved Public IP Address of the ISP')
+
+# For each domain get the DNS A Records,
+# Then for each DNS A Record compare it to the dns_records
+# If the DNS A Record and dns_record are the same attempt to update the GoDaddy DNS A Record
+# If the Public IP address and the DNS A Record IP Address are different
+# Then update the DNS A Record, do nothing otherwise
+for domain in domains:
+    records = client.find_dns_records(domain)
+    logging.debug('Checking records for Domain: {0}'.format(domain))
+    
+    for record in records:
+        logging.debug('Checking DNS Record: {0}'.format(record))
+        fqdn = "{0}.{1}".format(record.hostname, domain)
+        
+        for dyn_record in dns_records:
+            logging.debug('Check current ip[{0}] against old ip[{1}]'.format(record.value, public_ip))
+            
+            if public_ip != record.value:
+                logging.debug('Updating {0}.value from {1} to {2}'.format(fqdn, record.value, public_ip))
+                client.update_dns_record(fqdn, public_ip)
