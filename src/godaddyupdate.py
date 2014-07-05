@@ -18,6 +18,10 @@ import logging
 import json
 import pygodaddy
 
+def GetJson(file):
+    json_date = json.load(open(file, 'r'))
+    return json_date
+
 # Create a logger
 logging.basicConfig(filename='godaddy.log', format='%(asctime)s', level=logging.INFO)
 
@@ -28,3 +32,6 @@ GODADDY_PASSWORD = GetJson('config.json')['password']
 client = pygodaddy.GoDaddyClient()
 client.login(GODADDY_USERNAME, GODADDY_PASSWORD)
 
+# Get the Domains and DNS A Records
+dns_records = GetJson('config.json')['dns-records']
+domains = GetJson('config.json')['domains']
