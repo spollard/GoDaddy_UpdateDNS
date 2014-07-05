@@ -35,3 +35,7 @@ client.login(GODADDY_USERNAME, GODADDY_PASSWORD)
 # Get the Domains and DNS A Records
 dns_records = GetJson('config.json')['dns-records']
 domains = GetJson('config.json')['domains']
+
+# Get the current public IP Address
+public_ip = pif.get_public_ip()
+logging.debug('Retrieved Public IP Address of the ISP')
