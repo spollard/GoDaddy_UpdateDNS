@@ -1,11 +1,9 @@
 {
-	"username" : "@GODADDY_USERNAME@",
-	"password" : "@GODADDY_PASSWORD@",
-	"account-file" : "config.json"
-	"dns-records-file" : "config.json"
-	"domains-file" : "config.json"
-	"dns-records" : [
-	]
-	"domains" : [
-	]
+	"username" : "GODADDY_USERNAME",
+	"password" : "GODADDY_PASSWORD",
+	"account-file" : "config.json",
+	"dns-records-file" : "config.json",
+	"domains-file" : "config.json",
+	"dns-records" : [ "@" ],
+	"domains" : [ "DOMAIN" ]
 }

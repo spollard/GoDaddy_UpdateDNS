@@ -23,7 +23,7 @@ def GetJson(file):
     return json_date
 
 # Create a logger
-logging.basicConfig(filename='godaddy.log', format='%(asctime)s', level=logging.INFO)
+logging.basicConfig(filename='godaddy.log', format='%(asctime)s: %(message)s', level=logging.INFO)
 
 # Get the User Name & Password from a JSON file then Connect to GoDaddy
 GODADDY_USERNAME = GetJson('config.json')['username']

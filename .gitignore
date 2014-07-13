@@ -52,7 +52,11 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
-# eclipse stuff
+# Eclipse stuff
 .pydevproject
 .project
 .settings/
+
+# Vim files
+*.un~
+*.swp

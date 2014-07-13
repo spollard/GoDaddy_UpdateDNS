@@ -1,1 +1,23 @@
-TODO: Give basic installation instructions
+## Updates
+https://github.com/AngelicBrighteyes/GoDaddy_UpdateDNS
+
+## Required modules:
+- pygodaddy (tested with v.0.1.6)
+- pif (tested with v.0.7)
+
+## Set up
+Make sure you have the required modules installed. Pip is usually the easiest
+method for obtaining the modules.
+
+### Edit config.json
+In the config.json you'll need to replace the following with your information:
+- GODADDY_USERNAME
+- GODADDY_PASSWORD
+- @
+- DOMAIN
+
+### Or set up as a repeated task
+- Linux/Unix/FreeBSD/Debian/MaxOSX: Add as a cron job.
+- Windows: Add as a repeated Task.
+- Other: Jenkins Job - Recommended
+
