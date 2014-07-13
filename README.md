@@ -7,7 +7,8 @@ GoDaddy Update DNS is updates GoDaddy DNS 'A Records' with the new public ip add
 
 Contributors
 ------------
-RianaM - https://github.com/AngelicBrighteyes
+Riana M - https://github.com/AngelicBrighteyes
+Daniel P - https://github.com/dlpolanco
 
 The Latest Version
 ------------------
